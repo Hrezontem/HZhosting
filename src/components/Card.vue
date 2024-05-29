@@ -1,0 +1,54 @@
+<script>
+
+import {defineComponent} from "vue";
+import ButtonUI from "@/components/ButtonUI.vue";
+
+export default {
+  components: {ButtonUI},
+  props:{
+    card:{
+      type:Object,
+      required:true
+    }
+  }
+}
+</script>
+
+<template>
+  <div class="card">
+    <span class="card__header__text">{{card.name}}</span>
+    <div class="card__text">{{card.price}} ₽/мес.</div>
+    <span class="card__text">
+      Ядра    {{card.cores}}<br>
+      Память  {{card.memory}}<br>
+      Диски   {{card.drive}}
+    </span>
+    <button-u-i>Заказать сейчас</button-u-i>
+  </div>
+</template>
+
+<style>
+.card{
+  width: 15vw;
+  height: 45vh;
+  padding: 28px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.32);
+}
+.card__header__text{
+  font-weight: bold;
+  font-size: 24px;
+}
+.card__text{
+  margin-top: 92px;
+}
+.card__text:nth-child(2){
+  font-size: 22px;
+}
+.card__text:nth-child(3){
+  font-size: 15px;
+  margin-bottom: 44px;
+}
+</style>
