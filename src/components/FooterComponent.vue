@@ -59,7 +59,7 @@
   }
   .footer__container {
     width: inherit;
-    height: 57vh;
+    height: 45vh;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -15,5 +15,6 @@
     border-radius: 10px;
     color: black;
     font-size: 15px;
+    cursor: pointer;
   }
 </style>

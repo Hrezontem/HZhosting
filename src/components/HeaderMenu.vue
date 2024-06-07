@@ -1,14 +1,20 @@
 <script>
 
+import {defineComponent} from "vue";
+import ButtonMenu from "@/components/ButtonMenu.vue";
+
+export default defineComponent({
+  components: {ButtonMenu}
+})
 </script>
 
 <template>
   <div class="menu">
-    <div class="menu__logo"></div>
+    <div class="menu__logo" @click="$router.push('/')"></div>
     <div class="menu__btns">
-      <div class="btns__item">ГЛАВНАЯ</div>
-      <div class="btns__item">О НАС</div>
-      <div class="btns__item">КУПИТЬ</div>
+      <button-menu @click="$router.push('/servers')">СЕРВЕРА</button-menu>
+      <button-menu>КОРЗИНА</button-menu>
+      <button-menu>О НАС</button-menu>
     </div>
     <span class="menu__slogan">It`s just works</span>
   </div>

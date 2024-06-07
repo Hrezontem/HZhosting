@@ -1,5 +1,26 @@
 <script>
+import {ref} from "vue";
 
+export default {
+  data(){
+    return{
+      images: [
+        {dir_image: "@/assets/slides/1.jpg"},
+        {dir_image: "@/assets/slides/2.jpg"},
+        {dir_image: "@/assets/slides/3.jpg"},
+      ]
+    }
+  },
+  methods: {
+    imageUrl(selectedImage) {
+      return new URL(selectedImage, import.meta.url).href;
+    }
+
+  },
+  computed: {
+
+  }
+}
 </script>
 
 <template>
@@ -8,7 +29,9 @@
       <div class="slider__btns_item"></div>
       <div class="slider__btns_item"></div>
     </div>
-    <div class="slides"></div>
+    <div class="slides">
+      <img alt="sas" :src='imageUrl(image.dir_image)' v-for="image in images"  class="slides__item">
+    </div>
   </div>
 </template>
 
@@ -21,8 +44,10 @@
     background-color: #878787;
   }
   .slides{
+    display: flex;
+  }
+  .slides__item{
     width: 100%;
-    background-image: url("@/assets/slide.png");
   }
   .slider__btns{
     width: inherit;
@@ -38,6 +63,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-image: url("@/assets/arrow.png");
+    cursor: pointer;
   }
   .slider__btns_item:nth-child(2){
     transform: scale(-1, 1)

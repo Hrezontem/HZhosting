@@ -4,8 +4,14 @@ import Slider from "@/components/Slider.vue"
 import FooterComponent from "@/components/FooterComponent.vue";
 import ButtonUI from "@/components/ButtonUI.vue";
 import Card from "@/components/Card.vue";
+import store from "@/store";
 
 export default {
+  computed: {
+    store() {
+      return store
+    }
+  },
   components: {
     Card,
     ButtonUI,
@@ -14,13 +20,6 @@ export default {
     Slider
   },
   data(){
-    return{
-      cards:[
-        {name: 'Intel Xeon E5-1650v3', price:'7 758,19', cores: '6 ядер, 3.5 ГГц', memory:'64 ГБ DDR4', drive: '2 × 480 ГБ SSD SATA'},
-        {name: 'AMD Ryzen™ Threadripper™ PRO 5995WX', price:'23 309,43', cores: '64 ядер, 2.7 ГГц', memory:'128 ГБ DDR4', drive: '4 × 480 ГБ SSD SATA'},
-        {name: 'AMD EPYC 7713', price:'40 518,01', cores: '64 ядер, 3.6 ГГц', memory:'64 ГБ DDR4', drive: '2 × 480 ГБ SSD SATA'},
-      ]
-    }
   },
 
 
@@ -33,7 +32,7 @@ export default {
   <div class="cards">
     <card
         :card="card"
-        v-for="card in cards"
+        v-for="card in this.$store.state.cards_home"
     >
     </card>
   </div>
