@@ -5,6 +5,7 @@ import ButtonMenu from "@/components/ButtonMenu.vue";
 
 export default defineComponent({
   components: {ButtonMenu}
+
 })
 </script>
 

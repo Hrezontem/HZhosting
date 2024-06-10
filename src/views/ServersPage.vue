@@ -1,10 +1,19 @@
-<script setup>
+<script>
 
 import HeaderMenu from "@/components/HeaderMenu.vue";
 import Card from "@/components/Card.vue";
 import FooterComponent from "@/components/FooterComponent.vue";
 import SearchServers from "@/components/SearchServers.vue";
-
+import ButtonUI from "@/components/ButtonUI.vue";
+import Slider from "@/components/Slider.vue";
+export default {
+  components: {
+    Card,
+    HeaderMenu,
+    SearchServers,
+    FooterComponent,
+  },
+}
 </script>
 
 <template>

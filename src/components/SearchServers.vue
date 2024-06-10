@@ -8,11 +8,19 @@
     <div>></div>
     <input class="search__input" placeholder="Поиск..." type="text">
   </div>
-
+  <select>
+    <option>ЯДРА</option>
+    <option>RAM</option>
+    <option>HDD/SSD</option>
+  </select>
 </div>
 </template>
 
 <style scoped>
+select{
+  padding: 13px;
+  font-size: 24px;
+}
 .search__input {
   outline: none;
   border: none;
