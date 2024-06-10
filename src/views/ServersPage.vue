@@ -6,24 +6,27 @@ import FooterComponent from "@/components/FooterComponent.vue";
 import SearchServers from "@/components/SearchServers.vue";
 import ButtonUI from "@/components/ButtonUI.vue";
 import Slider from "@/components/Slider.vue";
+import CardList from "@/components/CardList.vue";
 export default {
   components: {
+    CardList,
     Card,
     HeaderMenu,
     SearchServers,
     FooterComponent,
   },
+  computed: {
+    searchedCards(){
+      return this.$store.state.cards.filter(card => card.name.toLowerCase().includes(this.$store.state.searchQuery.toLowerCase()));
+    }
+  }
 }
 </script>
 
 <template>
   <header-menu></header-menu>
   <search-servers></search-servers>
-  <div class="cards" >
-    <card
-        :card="card"
-        v-for="card in this.$store.state.cards"></card>
-  </div>
+  <card-list :cards="searchedCards"></card-list>
   <footer-component></footer-component>
 </template>
 

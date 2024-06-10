@@ -10,7 +10,8 @@ export default {
         {dir_image: "slide.png"},
         {dir_image: "2.jpg"},
         {dir_image: "3.jpg"},
-      ]
+      ],
+      timerCount: 10,
     }
   },
   methods: {
@@ -18,7 +19,7 @@ export default {
       if(this.currentSlideIndex > 0){
         this.currentSlideIndex --;
       } else {
-        this.currentSlideIndex = this.images.length;
+        this.currentSlideIndex = this.images.length - 1;
 
       }
     },
@@ -32,6 +33,24 @@ export default {
     }
 
   },
+  watch:{
+    timerCount: {
+      handler(value) {
+
+        if (value > 1) {
+          setTimeout(() => this.timerCount--, 1000);
+          console.log(this.timerCount);
+        }else{
+          this.nextSlide()
+          this.timerCount = 10
+        }
+
+
+      },
+      immediate: true // This ensures the watcher is triggered upon creation
+    },
+
+  }
 
 }
 </script>

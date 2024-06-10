@@ -1,14 +1,26 @@
-<script setup>
+<script>
 
+import SearchInput from "@/components/SearchInput.vue";
+export default {
+  components: {
+    SearchInput,
+  },
+
+  data(){
+    return{
+
+    }
+  }
+}
 </script>
 
 <template>
 <div class="search">
-  <div class="search__container">
+  <div class="search__container" >
     <div>></div>
-    <input class="search__input" placeholder="Поиск..." type="text">
+    <search-input v-model="this.$store.state.searchQuery" ></search-input>
   </div>
-  <select>
+  <select hidden="hidden">
     <option>ЯДРА</option>
     <option>RAM</option>
     <option>HDD/SSD</option>
@@ -21,13 +33,7 @@ select{
   padding: 13px;
   font-size: 24px;
 }
-.search__input {
-  outline: none;
-  border: none;
-  background-color: transparent;
-  font-size: 30px;
-  color: white;
-}
+
 .search__container{
   display: flex;
   border-bottom-style: solid;

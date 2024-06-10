@@ -16,5 +16,6 @@
     color: black;
     font-size: 15px;
     cursor: pointer;
+    outline: none;
   }
 </style>

@@ -33,9 +33,9 @@
         <div class="footer__list_item">
           <span class="list__header_text">Социальные сети</span>
           <div class="list__social-links">
-            <div class="list__social-links_item"></div>
-            <div class="list__social-links_item"></div>
-            <div class="list__social-links_item"></div>
+            <a href="https://telegram.org/?1" class="list__social-links_item"></a>
+            <a href="https://vk.com/" class="list__social-links_item"></a>
+            <a href="https://youtube.com/" class="list__social-links_item"></a>
           </div>
         </div>
       </div>

@@ -3,19 +3,19 @@
 import {defineComponent} from "vue";
 import ButtonMenu from "@/components/ButtonMenu.vue";
 
-export default defineComponent({
-  components: {ButtonMenu}
+export default {
+  components: {ButtonMenu},
 
-})
+}
 </script>
 
 <template>
   <div class="menu">
     <div class="menu__logo" @click="$router.push('/')"></div>
     <div class="menu__btns">
-      <button-menu @click="$router.push('/servers')">СЕРВЕРА</button-menu>
-      <button-menu>КОРЗИНА</button-menu>
-      <button-menu>О НАС</button-menu>
+      <button-menu :style="{'color': this.$route.name === 'servers' ? 'grey': 'black'}"  @click="$router.push('/servers')">СЕРВЕРА</button-menu>
+      <button-menu :style="{'color': this.$route.name === 'cart' ? 'grey': 'black'}" @click="$router.push('/cart')">КОРЗИНА</button-menu>
+      <button-menu :style="{'color': this.$route.name === 'about' ? 'grey': 'black'}" @click="$router.push('/about')">О НАС</button-menu>
     </div>
     <span class="menu__slogan">It`s just works</span>
   </div>
@@ -46,5 +46,6 @@ export default defineComponent({
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+    cursor: pointer;
   }
 </style>
