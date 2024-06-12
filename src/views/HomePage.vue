@@ -28,6 +28,7 @@ export default {
 
 <template>
   <header-menu></header-menu>
+  <h1>Главная</h1>
   <slider></slider>
   <div class="cards">
     <card

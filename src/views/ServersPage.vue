@@ -25,16 +25,12 @@ export default {
 
 <template>
   <header-menu></header-menu>
+  <h1>Сервера</h1>
   <search-servers></search-servers>
   <card-list :cards="searchedCards"></card-list>
   <footer-component></footer-component>
 </template>
 
 <style scoped>
-.cards{
-  display: grid;
-  grid-template-columns: 16vw 16vw 16vw;
-  align-items: center;
-  gap: 54px;
-}
+
 </style>

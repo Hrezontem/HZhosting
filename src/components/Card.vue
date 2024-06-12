@@ -10,6 +10,13 @@ export default {
       type:Object,
       required:true
     }
+  },
+  methods:{
+    pushToCart(){
+      if(!this.$store.state.cart.includes(this.card)){
+        this.$store.state.cart.push(this.card);
+      }
+    }
   }
 }
 </script>
@@ -24,7 +31,7 @@ export default {
       Память  {{card.memory}}<br>
       Диски   {{card.drive}}
     </span>
-      <button-u-i class="btn-card">Заказать сейчас</button-u-i>
+      <button-u-i class="btn-card" @click="pushToCart()">Заказать сейчас</button-u-i>
     </div>
   </div>
 </template>
