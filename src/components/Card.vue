@@ -5,6 +5,11 @@ import ButtonUI from "@/components/ButtonUI.vue";
 
 export default {
   components: {ButtonUI},
+  data(){
+    return{
+      isInCart: false,
+    }
+  },
   props:{
     card:{
       type:Object,
@@ -16,7 +21,8 @@ export default {
       if(!this.$store.state.cart.includes(this.card)){
         this.$store.state.cart.push(this.card);
       }
-    }
+      this.isInCart = true;
+    },
   }
 }
 </script>
@@ -31,7 +37,7 @@ export default {
       Память  {{card.memory}}<br>
       Диски   {{card.drive}}
     </span>
-      <button-u-i class="btn-card" @click="pushToCart()">Заказать сейчас</button-u-i>
+      <button-u-i class="btn-card" @click="pushToCart()"> {{isInCartl ? 'В корзине' : 'Заказать сейчас'}}</button-u-i>
     </div>
   </div>
 </template>

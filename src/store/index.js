@@ -31,6 +31,8 @@ export default createStore({
       {id: 15, name: 'AMD EPYC 7713', price:'40 518,01', cores: '64 ядер, 3.6 ГГц', memory:'64 ГБ DDR4', drive: '2 × 480 ГБ SSD SATA'},],
     cart: [],
     searchQuery: '',
+    isInCart: false,
+
   },
   getters: {
   },
